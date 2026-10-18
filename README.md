@@ -4,6 +4,13 @@ A weekly, branded safety briefing sheet for U.S. AutoForce drivers. Pick a week,
 
 The same tool also has a separate **warehouse** variant (see below).
 
+## Open it in the browser (no download needed)
+
+- **Driver sheet:** https://joshwheeler8206-cell.github.io/safety-huddle/safety-huddle-generator.html
+- **Warehouse sheet:** https://joshwheeler8206-cell.github.io/safety-huddle/warehouse-safety-huddle-generator.html
+
+These render and run live (GitHub Pages). Clicking the `.html` file *inside* the repo instead will just show you the source code — that's GitHub being GitHub, not a broken file.
+
 ## What you get
 
 A single printable page per week containing:
@@ -25,7 +32,7 @@ Real output is checked into [`samples/`](samples/) so you can see what you get b
 
 ### 1. The HTML generator (this is the one for the work laptop)
 
-`safety-huddle-generator.html` in this repo — a self-contained 148 KB file with the logo, all 24 topics, the CSS and the JavaScript inlined. No Python, no network, no dependencies. Download it, double-click it on the Windows work laptop, and it opens in Edge or Chrome.
+**[Open the live driver generator](https://joshwheeler8206-cell.github.io/safety-huddle/safety-huddle-generator.html)** — or grab `safety-huddle-generator.html` in this repo, a self-contained 148 KB file with the logo, all 24 topics, the CSS and the JavaScript inlined. No Python, no network, no dependencies. Download it, double-click it on the Windows work laptop, and it opens in Edge or Chrome.
 
 Controls along the top:
 
@@ -122,7 +129,7 @@ python3 ~/scripts/warehouse_huddle.py --lang es     # Spanish sheet
 python3 ~/scripts/warehouse_huddle.py --lang both   # bilingual, side by side
 ```
 
-The `both` mode is what produces the `-wkNN-both.html` / `.pdf` files — one sheet an English-speaking and a Spanish-speaking employee can read together, rather than two handouts. Its single-file generator, `warehouse-safety-huddle-generator.html`, has the same control bar and the same screen-only 3D deck as the driver version.
+The `both` mode is what produces the `-wkNN-both.html` / `.pdf` files — one sheet an English-speaking and a Spanish-speaking employee can read together, rather than two handouts. Its single-file generator, **[the live warehouse generator](https://joshwheeler8206-cell.github.io/safety-huddle/warehouse-safety-huddle-generator.html)** (`warehouse-safety-huddle-generator.html`), has the same control bar and the same screen-only 3D deck as the driver version.
 
 The two tools share no code beyond the brand logo, so changing one never affects the other.
 
