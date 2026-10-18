@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Safety Huddle Generator
+Comment=Generate this week's safety briefing
+Exec=bash -c 'cd ~/Desktop/work && python3 safety_huddle.py && notify-send "Safety Huddle" "PDF ready in ~/Desktop/work/"'
+Icon=text-html
+Terminal=false
+Type=Application
+Categories=Office;

@@ -1,0 +1,9 @@
+# Generated weekly sheets - rebuild with the *_build_html.py scripts
+safety-huddle-wk*.html
+safety-huddle-wk*.pdf
+warehouse-safety-huddle-wk*.html
+warehouse-safety-huddle-wk*.pdf
+
+# Never commit the brand source assets beyond the print logo
+__pycache__/
+*.pyc
