@@ -15,6 +15,12 @@ A single printable page per week containing:
 
 Everything fits on **one page**, and that is verified rather than assumed: all 53 ISO weeks were rendered in both languages and checked with `pdfinfo` (106 PDFs, 0 failures).
 
+Real output is checked into [`samples/`](samples/) so you can see what you get before running anything:
+
+- [`samples/driver-wk42-en.pdf`](samples/driver-wk42-en.pdf) — driver sheet, English
+- [`samples/driver-wk42-es.pdf`](samples/driver-wk42-es.pdf) — driver sheet, Spanish
+- [`samples/warehouse-wk42-both.pdf`](samples/warehouse-wk42-both.pdf) — warehouse sheet, bilingual side-by-side (2 pages, since it carries both languages)
+
 ## Two ways to run it
 
 ### 1. The HTML generator (this is the one for the work laptop)
@@ -148,7 +154,27 @@ python3 warehouse_huddle_build_html.py
 
 Output goes to `~/Desktop/work/` when that folder exists (the normal setup on this PC), and falls back to the repo folder otherwise. The result is byte-identical to the checked-in HTML as long as the sources are unchanged, so rebuilding on a clone is a safe way to confirm nothing was edited by hand.
 
-On this machine the sources also live at `~/scripts/safety_huddle.py` and `~/Desktop/work/safety_huddle.py` — those are the **same files**, not copies, so editing any of them works.
+On this machine the live sources also sit at `~/scripts/safety_huddle.py` and `~/Desktop/work/safety_huddle.py` — those are the **same files**, not copies, so editing any of them works.
+
+## Publishing an update
+
+The live working copies are in `~/scripts/` (that is what the desktop launchers and the normal editing habit use). After changing a topic, push it back out so the repo and the laptop copy stay in step:
+
+```bash
+# 1. edit the live source
+nano ~/scripts/safety_huddle.py
+
+# 2. rebuild the browser version
+python3 ~/scripts/safety_huddle_build_html.py
+
+# 3. copy the changed files into a clone and push
+cd ~/safety-huddle
+cp ~/scripts/safety_huddle.py ~/scripts/safety_huddle_build_html.py .
+cp ~/Desktop/work/safety-huddle-generator.html .
+git add -A && git commit -m "Update <topic>" && git push
+```
+
+`~/safety-huddle/` is the local clone of this repo. If you skip step 3 the repo keeps the old topic — the browser file on the work laptop is only as fresh as the last push.
 
 ## Gotchas
 
